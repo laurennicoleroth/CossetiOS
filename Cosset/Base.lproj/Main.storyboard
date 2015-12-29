@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YrQ-I4-FGL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ULO-Sh-YZL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -14,22 +14,54 @@
                         <viewControllerLayoutGuide type="bottom" id="jGJ-Xb-MZq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4vq-O7-Ck5">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="COSSET" id="prg-nH-3hh">
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="v0H-ET-k8c">
-                            <connections>
-                                <segue destination="Dgz-Tt-YPb" kind="show" id="ULe-bB-cAK"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="v0H-ET-k8c"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w81-yy-kBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1175.5" y="391.5"/>
+        </scene>
+        <!--COSSET-->
+        <scene sceneID="9KT-zV-doj">
+            <objects>
+                <tableViewController id="cBB-jb-IHJ" customClass="AppointmentsTableViewController" customModule="Cosset" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qj3-cS-aba">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jYq-TY-oCL">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jYq-TY-oCL" id="KK1-6B-dW6">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cBB-jb-IHJ" id="jY0-7X-0kh"/>
+                            <outlet property="delegate" destination="cBB-jb-IHJ" id="6jX-Pb-Rav"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="COSSET" id="plD-mG-wzZ">
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="qoc-SU-KBq">
+                            <connections>
+                                <segue destination="Dgz-Tt-YPb" kind="show" id="4g3-rh-Vq2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5kz-2C-btx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241.5" y="1959.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="fBi-6O-wJa">
@@ -57,29 +89,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gB9-mk-q7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1587.5" y="391.5"/>
+            <point key="canvasLocation" x="1689.5" y="1959.5"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="HaF-vU-yH2">
+        <scene sceneID="Z5d-2d-x4w">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YrQ-I4-FGL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ULO-Sh-YZL" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="V11-cF-xHN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Vhy-xC-uL5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Jys-mT-JMb" kind="relationship" relationship="rootViewController" id="Zqa-XB-pNd"/>
+                        <segue destination="cBB-jb-IHJ" kind="relationship" relationship="rootViewController" id="a7A-xQ-jc3"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Lc-Cc-Fsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7L-cc-rMi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175.5" y="-406.5"/>
+            <point key="canvasLocation" x="1241" y="1132"/>
         </scene>
     </scenes>
 </document>
