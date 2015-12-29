@@ -31,12 +31,12 @@ class LoginViewController: UIViewController {
         
         let ref = Firebase(url: "https://cosset.firebaseio.com/")
         let facebookLogin = FBSDKLoginManager()
-        let facebookReadPermissions = ["email"]
+        let facebookReadPermissions = ["public_profile", "email"]
         
         facebookLogin.logInWithReadPermissions(facebookReadPermissions, fromViewController: self, handler: {
           (facebookResult, facebookError) -> Void in
             
-            print("attempting to login")
+            print("Facebook logging in with read permissions.")
             
             if facebookError != nil {
                 print("Facebook login failed. Error \(facebookError)")
@@ -51,7 +51,10 @@ class LoginViewController: UIViewController {
                         if error != nil {
                             print("Login failed. \(error)")
                         } else {
-                            print("Logged in! \(authData)")
+                            print("Logged in! \(authData.uid)")
+                            print("Welcome, \(authData.providerData["email"])")
+//                          other options: uid, provider, token, auth, expires, providerData["id" or "accessToken" or "email"
+//                            or "profileImageURL" or "cachedUserProfile"]
                         }
                 })
             }
