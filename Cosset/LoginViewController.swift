@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKShareKit
+
 
 class LoginViewController: UIViewController {
 
