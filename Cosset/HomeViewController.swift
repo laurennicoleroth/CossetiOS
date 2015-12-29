@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        listenForLoginState()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +22,18 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func listenForLoginState() {
+        let ref = Firebase(url: "https://cosset.firebaseio.com/")
+        
+        ref.observeAuthEventWithBlock({ authData in
+            if authData != nil {
+                print("Welcome, \(authData.providerData["cachedUserProfile"])")
+            } else {
+                print("not logged in")
+            }
+        
+        })
+    }
 
     /*
     // MARK: - Navigation
