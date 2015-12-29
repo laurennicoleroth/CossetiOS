@@ -11,7 +11,6 @@ import FBSDKShareKit
 import FBSDKLoginKit
 import Firebase
 
-
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -29,7 +28,7 @@ class LoginViewController: UIViewController {
         
         print("Sign me in please")
         
-        let ref = Firebase(url: "https://cosset.firebaseio.com/")
+        let ref = Firebase(url: "https://cosset.firebaseio.com/clients")
         let facebookLogin = FBSDKLoginManager()
         let facebookReadPermissions = ["public_profile", "email"]
         
@@ -52,9 +51,22 @@ class LoginViewController: UIViewController {
                             print("Login failed. \(error)")
                         } else {
                             print("Logged in! \(authData.uid)")
-                            print("Welcome, \(authData.providerData["email"])")
-//                          other options: uid, provider, token, auth, expires, providerData["id" or "accessToken" or "email"
-//                            or "profileImageURL" or "cachedUserProfile"]
+
+                            let clientEmail = authData.providerData["email"] as! String
+                            
+                         /* other options: uid, provider, token, auth, expires, providerData["id" or "accessToken" or "email"
+                           or "profileImageURL" or "cachedUserProfile"] */
+                            
+                            ref.createUser(clientEmail, password: "randompassword123",
+                                withValueCompletionBlock: { error, result in
+                                    
+                                    if error != nil {
+                                        print("there was an error creating the account: \(error)")
+                                    } else {
+                                        let uid = result["uid"] as? String
+                                        print("Successfully created user account with uid: \(uid)")
+                                    }
+                            })
                         }
                 })
             }

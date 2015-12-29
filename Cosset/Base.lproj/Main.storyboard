@@ -6,28 +6,6 @@
     </dependencies>
     <scenes>
         <!--COSSET-->
-        <scene sceneID="CxT-qF-cbF">
-            <objects>
-                <viewController id="Jys-mT-JMb" customClass="HomeViewController" customModule="Cosset" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cCQ-si-3SI"/>
-                        <viewControllerLayoutGuide type="bottom" id="jGJ-Xb-MZq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4vq-O7-Ck5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="COSSET" id="prg-nH-3hh">
-                        <barButtonItem key="rightBarButtonItem" title="Login" id="v0H-ET-k8c"/>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w81-yy-kBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1175.5" y="391.5"/>
-        </scene>
-        <!--COSSET-->
         <scene sceneID="9KT-zV-doj">
             <objects>
                 <tableViewController id="cBB-jb-IHJ" customClass="AppointmentsTableViewController" customModule="Cosset" customModuleProvider="target" sceneMemberID="viewController">

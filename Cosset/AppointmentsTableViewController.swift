@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class AppointmentsTableViewController: UITableViewController {
+    
+    // MARK: Constants
+    let rootRef = Firebase(url: "https://cosset.firebaseio.com")
+    let appointmentsRef = Firebase(url: "https://cosset.firebaseio.com/appointments")
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("Hello from appointments")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
