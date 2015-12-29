@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class HomeViewController: UIViewController {
-
+    let ref = Firebase(url: "https://cosset.firebaseio.com/")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,17 +24,20 @@ class HomeViewController: UIViewController {
     }
     
     func listenForLoginState() {
-        let ref = Firebase(url: "https://cosset.firebaseio.com/")
         
-        ref.observeAuthEventWithBlock({ authData in
+        
+        let handle = ref.observeAuthEventWithBlock({ authData in
             if authData != nil {
-                print("Welcome, \(authData.providerData["cachedUserProfile"])")
+                print("Welcome, \(authData.providerData["displayName"]!)")
             } else {
-                print("not logged in")
+                print("User is not logged in.")
             }
         
         })
+        
+        ref.removeAuthEventObserverWithHandle(handle)
     }
+
 
     /*
     // MARK: - Navigation
