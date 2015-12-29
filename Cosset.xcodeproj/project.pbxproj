@@ -15,6 +15,7 @@
 		967F9C411C3315D700B90E7F /* CossetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9C401C3315D700B90E7F /* CossetTests.swift */; };
 		967F9C4C1C3315D700B90E7F /* CossetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9C4B1C3315D700B90E7F /* CossetUITests.swift */; };
 		967F9C5F1C33213800B90E7F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9C5E1C33213800B90E7F /* HomeViewController.swift */; };
+		967F9C611C3329CB00B90E7F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967F9C601C3329CB00B90E7F /* LoginViewController.swift */; };
 		DBB324F4E03731554C69C5CE /* Pods_CossetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B42B0F800B0085BD7C0242A4 /* Pods_CossetUITests.framework */; };
 		FB30D38223676704B370044F /* Pods_CossetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E27D187E32EEA8593B135201 /* Pods_CossetTests.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		967F9C4B1C3315D700B90E7F /* CossetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CossetUITests.swift; sourceTree = "<group>"; };
 		967F9C4D1C3315D700B90E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		967F9C5E1C33213800B90E7F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		967F9C601C3329CB00B90E7F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9D71FE134D4FA5954EDE347B /* Pods-Cosset.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cosset.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cosset/Pods-Cosset.debug.xcconfig"; sourceTree = "<group>"; };
 		B42B0F800B0085BD7C0242A4 /* Pods_CossetUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CossetUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A094EDF2E93DB5D445420D /* Pods-CossetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CossetUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CossetUITests/Pods-CossetUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				967F9C2B1C3315D700B90E7F /* AppDelegate.swift */,
 				967F9C5E1C33213800B90E7F /* HomeViewController.swift */,
+				967F9C601C3329CB00B90E7F /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967F9C611C3329CB00B90E7F /* LoginViewController.swift in Sources */,
 				967F9C2C1C3315D700B90E7F /* AppDelegate.swift in Sources */,
 				967F9C5F1C33213800B90E7F /* HomeViewController.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  LoginViewController.swift
 //  Cosset
 //
 //  Created by Lauren Nicole Roth on 12/29/15.
@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Firebase
 
-class HomeViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
