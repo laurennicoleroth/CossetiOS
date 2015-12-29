@@ -42,6 +42,15 @@
                     <view key="view" contentMode="scaleToFill" id="oGI-Qo-ea9">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXN-lr-EBu">
+                                <rect key="frame" x="20" y="252" width="144" height="30"/>
+                                <state key="normal" title="Login With Facebook"/>
+                                <connections>
+                                    <action selector="LoginWithFacebookClicked:" destination="Dgz-Tt-YPb" eventType="touchUpInside" id="CgG-fI-ejs"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
