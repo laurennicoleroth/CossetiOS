@@ -12,9 +12,12 @@ import FBSDKLoginKit
 import Firebase
 
 class LoginViewController: UIViewController {
+    
+    let ref = Firebase(url: "https://cosset.firebaseio.com")
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +36,6 @@ class LoginViewController: UIViewController {
         
         print("Sign me in please")
         
-        let ref = Firebase(url: "https://cosset.firebaseio.com/clients")
         let facebookLogin = FBSDKLoginManager()
         let facebookReadPermissions = ["public_profile", "email"]
         
@@ -49,7 +51,7 @@ class LoginViewController: UIViewController {
             } else {
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
                 
-                ref.authWithOAuthProvider("facebook", token: accessToken,
+                self.ref.authWithOAuthProvider("facebook", token: accessToken,
                     withCompletionBlock: { error, authData in
                         
                         if error != nil {
@@ -71,7 +73,6 @@ class LoginViewController: UIViewController {
     }
     
     func createUserOnFirebase(email: String, password: String) {
-        let ref = Firebase(url: "https://cosset.firebaseio.com/clients")
         
         print("Creating user \(email) on Firebase")
         
@@ -91,7 +92,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginWithEmailButtonClicked(sender: AnyObject) {
         
         let email = emailTextField.text
-        let password = passwordTextField.text
+        let password = emailTextField.text
         
         if email != Optional("") && password != Optional("") {
             loginToFirebase(email!, password: password!)
@@ -103,22 +104,36 @@ class LoginViewController: UIViewController {
     
     func loginToFirebase(email: String, password: String) {
         print("Login attempted with \(email) and \(password)")
-        
-        let ref = Firebase(url: "https://cosset.firebaseio.com/clients")
+
         ref.authUser(email, password: password,
             withCompletionBlock: { error, authData in
                 
                 if error != nil {
                     // There was an error logging in to this account
                     print("There was an error logging into this account: \(error)")
-                    print("About to create the user")
                     
-                    self.createUserOnFirebase(email, password: password)
+//                    self.createUserOnFirebase(email, password: password)
                     
                 } else {
                     // We are now logged in
                     print("Congrats! You are logged in.")
                 }
+        })
+    }
+    
+    @IBAction func forgotButtonClicked(sender: AnyObject) {
+        print("Forgot password button clicked")
+        
+        let forgottenEmail = emailTextField.text
+        
+        ref.resetPasswordForUser(forgottenEmail, withCompletionBlock: { error in
+            
+            if error != nil {
+                print("There was an error processing the request from forgotten email: \(error)")
+            } else {
+                print("Password for \(forgottenEmail)reset sent successfully")
+            }
+        
         })
     }
 
