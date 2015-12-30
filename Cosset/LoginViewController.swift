@@ -103,6 +103,23 @@ class LoginViewController: UIViewController {
     
     func loginToFirebase(email: String, password: String) {
         print("Login attempted with \(email) and \(password)")
+        
+        let ref = Firebase(url: "https://cosset.firebaseio.com/clients")
+        ref.authUser(email, password: password,
+            withCompletionBlock: { error, authData in
+                
+                if error != nil {
+                    // There was an error logging in to this account
+                    print("There was an error logging into this account: \(error)")
+                    print("About to create the user")
+                    
+                    self.createUserOnFirebase(email, password: password)
+                    
+                } else {
+                    // We are now logged in
+                    print("Congrats! You are logged in.")
+                }
+        })
     }
 
     /*
