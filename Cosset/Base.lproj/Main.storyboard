@@ -89,11 +89,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWW-j0-cfC">
-                                <rect key="frame" x="20" y="305" width="111" height="30"/>
-                                <state key="normal" title="Login with Email"/>
+                                <rect key="frame" x="20" y="305" width="183" height="30"/>
+                                <state key="normal" title="Login or SignUp with Email"/>
                                 <connections>
                                     <action selector="loginWithEmailButtonClicked:" destination="Dgz-Tt-YPb" eventType="touchUpInside" id="X34-vT-dMw"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u84-XJ-31N">
+                                <rect key="frame" x="296" y="305" width="53" height="30"/>
+                                <state key="normal" title="Forgot?"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
