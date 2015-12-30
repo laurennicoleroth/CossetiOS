@@ -13,8 +13,13 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("Hello from LoginViewController")
 
         // Do any additional setup after loading the view.
     }
@@ -53,26 +58,51 @@ class LoginViewController: UIViewController {
                             print("Logged in! \(authData.uid)")
 
                             let clientEmail = authData.providerData["email"] as! String
+                            let password = "SomeRandomPassword123"
                             
-                         /* other options: uid, provider, token, auth, expires, providerData["id" or "accessToken" or "email"
-                           or "profileImageURL" or "cachedUserProfile"] */
+                            self.createUserOnFirebase(clientEmail, password: password)
                             
-                            ref.createUser(clientEmail, password: "randompassword123",
-                                withValueCompletionBlock: { error, result in
-                                    
-                                    if error != nil {
-                                        print("there was an error creating the account: \(error)")
-                                    } else {
-                                        let uid = result["uid"] as? String
-                                        print("Successfully created user account with uid: \(uid)")
-                                    }
-                            })
                         }
                 })
             }
         
         })
         
+    }
+    
+    func createUserOnFirebase(email: String, password: String) {
+        let ref = Firebase(url: "https://cosset.firebaseio.com/clients")
+        
+        print("Creating user \(email) on Firebase")
+        
+        ref.createUser(email, password: password,
+            withValueCompletionBlock: { error, result in
+                
+                if error != nil {
+                    print("there was an error creating the account: \(error)")
+                } else {
+                    let uid = result["uid"] as? String
+                    print("Successfully created user account with uid: \(uid)")
+                }
+        })
+
+    }
+    
+    @IBAction func loginWithEmailButtonClicked(sender: AnyObject) {
+        
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        
+        if email != Optional("") && password != Optional("") {
+            loginToFirebase(email!, password: password!)
+        } else {
+            print("Text fields were left empty.")
+        }
+        
+    }
+    
+    func loginToFirebase(email: String, password: String) {
+        print("Login attempted with \(email) and \(password)")
     }
 
     /*
